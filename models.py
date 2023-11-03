@@ -1,12 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy  
+
 db=SQLAlchemy()
 
 def connect_db(app):
-    """Connect to database"""
-    db.app = app
+    db.app=app
     db.init_app(app)
     
-Class Pet(db.Model):
+class Pet(db.Model):
     """Pets for adoption"""
     __tablename__='pets'
     
@@ -18,3 +18,5 @@ Class Pet(db.Model):
     notes = db.Column(db.String)
     available = db.Column(db.Boolean, nullable=False, default=True)
     
+    def __repr__ (self):
+        return f"<Pet: {self.name}, Available: {self.available}>"

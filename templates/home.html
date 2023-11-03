@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {%block title%} Pets🐈 {% endblock %} {% block content
+%}
+<h1>Who Will 🫵🏿You Give A Furrever Home 🐶</h1>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  {% for pet in pets %}
+  <div class="col">
+    <div class="card">
+      <img
+        src="{{pet.photo_url}}"
+        alt=""
+        class="card-img-top" />
+      <div class="card-body">
+        <h5 class="card-title">{{pet.name}}</h5>
+        {% if pet.available %}
+        <p class="card-text fw-bold">Available</p>
+        {% else %}
+        <p>Currently Not Available</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock %}
