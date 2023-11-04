@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {%block title%} {{pet.name}}{% endblock %} {% block
 content %}
-<h1 class="">All About {{pet.name}}</h1>
+<h1 class="text-center">Details</h1>
 <div
-  class="card"
+  class="card mx-auto"
   style="width: 18rem">
   <img
     src="{{pet.photo_url}}"
@@ -17,17 +17,25 @@ content %}
     {% endif %}
     <li class="list-group-item">Species: {{pet.species}}</li>
   </ul>
+
+  <a
+    href="/"
+    class="btn btn-outline-info border-0"
+    >Go Back</a
+  >
 </div>
+
 <div class="container mt-4">
   <form
     id="add-pet-form"
-    method="post">
-    <h3>Edit {{pet.name}} Details</h3>
+    method="post"
+    class="border border-3 border-info rounded p-4">
+    <h3 class="text-center">Edit {{pet.name}} Details</h3>
     {{ form.hidden_tag() }} {% for field in form if field.widget.input_type !=
     'hidden' %}
     <p>
-      {{ field.label }} {{ field }} {% for error in field.errors %} {{ error }}
-      {% endfor %}
+      {{ field.label }} {{ field(class_="form-control") }} {% for error in
+      field.errors %} {{ error }} {% endfor %}
     </p>
     {% endfor %}
 
