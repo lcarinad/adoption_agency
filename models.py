@@ -13,7 +13,7 @@ class Pet(db.Model):
     id = db.Column(db.Integer, primary_key = True, autoincrement=True)
     name = db.Column(db.String, nullable=False)
     species = db.Column(db.String, nullable=False)
-    photo_url = db.Column(db.String)
+    photo_url = db.Column(db.String, default="https://static.wikia.nocookie.net/spongebobgalaxy/images/c/cd/Gary_the_Snail.png/revision/latest/scale-to-width-down/180?cb=20171105152328")
     age = db.Column(db.Integer)
     notes = db.Column(db.String)
     available = db.Column(db.Boolean, nullable=False, default=True)

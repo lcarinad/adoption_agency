@@ -16,10 +16,20 @@
         {% else %}
         <p>Currently Not Available</p>
         {% endif %}
+        <a
+          href="/{{pet.id}}"
+          class="btn btn-outline-info"
+          >Learn More About {{pet.name}}</a
+        >
       </div>
     </div>
   </div>
 
   {% endfor %}
 </div>
+<a
+  href="/add"
+  class="btn btn-primary btn-lg mt-4"
+  >Add Pet</a
+>
 {% endblock %}
